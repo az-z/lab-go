@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	fmt.Println("HEllo!")
+	fmt.Println(" Hello!")
 
 	if 'A' == 'A' {
 		print("DA")

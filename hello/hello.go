@@ -2,10 +2,12 @@ package main
 
 import (
 	"fmt"
+	strutl "github.com/az-z/lab-go/stringutil"
 )
 
 func main() {
-	fmt.Println(" Hello!")
+
+	fmt.Println(strutl.Reverse(" Hello!"))
 
 	if 'A' == 'A' {
 		print("DA")

@@ -18,4 +18,9 @@ func main() {
 	default:
 		fmt.Println("Too far away.")
 	}
+
+	for i := 0; i < 3; {
+		fmt.Println("i - ", i)
+		i = i + 1
+	}
 }

@@ -1,6 +1,11 @@
 package main
 
 import "code.google.com/p/go-tour/pic"
+		"code.google.com/p/go-tour/wc"
+
+func WordCount(s string) map[string]int {
+	return map[string]int{"x": 1}
+}
 
 func Pic(dx, dy int) [][]uint8 {
 	slce := make([][]uint8, dx)
@@ -12,4 +17,7 @@ func Pic(dx, dy int) [][]uint8 {
 
 func main() {
 	pic.Show(Pic)
+	wc.Test(WordCount)
+
+
 }

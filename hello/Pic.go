@@ -17,17 +17,21 @@ var (
 
 func WordCount(s []string) map[string]int {
 	var (
-	//	exist bool //= true
+	// ind int
 	)
 	sorted_map := make(map[string]int)
 
 	for i := 0; i < len(s); i++ {
 		if _, exist := sorted_map[s[i]]; exist {
 			sorted_map[s[i]] = sorted_map[s[i]] + 1
-			//fmt.Println("sorted_map[i] - ", sorted_map[s[i]])
+			// fmt.Printf("sorted_map[%v] - %v \n", i, sorted_map[s[i]])
 		} else {
+			//
+			sorted_map[s[i]] = append(sorted_map)
 			sorted_map[s[i]] = 1
+
 		}
+		fmt.Println(sorted_map)
 	}
 
 	return sorted_map
@@ -63,15 +67,9 @@ func main() {
 	// v_str = *(readFile("/home/az/work/GO/data/10.txt.utf-8"))
 	// v_str = *(readFile("/home/az/work/GO/data/https://archive.org/stream/Scudry-ArtamneOuLeGrandCyrusTroisimePartie1654/Scudry-ArtamneOuLeGrandCyrusTroisimePartie1654_djvu.txt"))
 	slice_s = st.Fields(v_str)
-	fmt.Println("And the slice is - ", slice_s)
-	sort.Strings(slice_s)
-	fmt.Println("And the sorted slice is - ", slice_s)
-	// slice_s1 = sort.Strings(sort.StringSlice(slice_s))
-	// slice_s1 = sort.Sort(st.Fields(v_str))
-	//sorted_slice := sort.Sort(slice_s)
 
-	//WordCount(slice_s)
-	fmt.Printf("slice_s - %v \n", slice_s)
+	sort.Strings(sort.StringSlice(slice_s))
+	fmt.Printf("sorted slice_s - %v \n", slice_s)
 	fmt.Printf("sorted_map - %v", WordCount(slice_s))
 	// wc.Test(WordCount)
 

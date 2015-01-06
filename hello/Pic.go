@@ -4,7 +4,9 @@ import (
 	// "code.google.com/p/go-tour/pic"
 	// "code.google.com/p/go-tour/wc"
 	"fmt"
-	//"sort"
+	"sort"
+	// "io"
+	ioutl "io/ioutil"
 	st "strings"
 )
 
@@ -42,14 +44,28 @@ func Pic(dx, dy int) [][]uint8 {
 	}
 	return slce
 }
+func check(e error) {
+	if e != nil {
+		panic(e)
+	}
+}
+
+func readFile(s string) *string {
+	dat, err := ioutl.ReadFile(s)
+	check(err)
+	str_ := string(dat)
+	return &str_
+}
 
 func main() {
 	// pic.Show(Pic)
-	slice_s := st.Fields(v_str)
+	v_str = *(readFile("/home/az/work/GO/data/10.txt.utf-8"))
+	v_str = *(readFile("/home/az/work/GO/data/https://archive.org/stream/Scudry-ArtamneOuLeGrandCyrusTroisimePartie1654/Scudry-ArtamneOuLeGrandCyrusTroisimePartie1654_djvu.txt"))
+	slice_s := sort.Sort(st.Fields(v_str))
 	//sorted_slice := sort.Sort(slice_s)
 
 	//WordCount(slice_s)
-	fmt.Printf("slice_s - %v \n", slice_s)
+	// fmt.Printf("slice_s - %v \n", slice_s)
 	fmt.Printf("sorted_map - %v", WordCount(slice_s))
 	// wc.Test(WordCount)
 

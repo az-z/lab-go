@@ -11,7 +11,8 @@ import (
 )
 
 var (
-	v_str = "a a a a big and fat fat brown fox been brown"
+	v_str             = "a a a a big and fat fat brown fox been brown"
+	slice_s, slice_s1 []string
 )
 
 func WordCount(s []string) map[string]int {
@@ -59,13 +60,18 @@ func readFile(s string) *string {
 
 func main() {
 	// pic.Show(Pic)
-	v_str = *(readFile("/home/az/work/GO/data/10.txt.utf-8"))
-	v_str = *(readFile("/home/az/work/GO/data/https://archive.org/stream/Scudry-ArtamneOuLeGrandCyrusTroisimePartie1654/Scudry-ArtamneOuLeGrandCyrusTroisimePartie1654_djvu.txt"))
-	slice_s := sort.Sort(st.Fields(v_str))
+	// v_str = *(readFile("/home/az/work/GO/data/10.txt.utf-8"))
+	// v_str = *(readFile("/home/az/work/GO/data/https://archive.org/stream/Scudry-ArtamneOuLeGrandCyrusTroisimePartie1654/Scudry-ArtamneOuLeGrandCyrusTroisimePartie1654_djvu.txt"))
+	slice_s = st.Fields(v_str)
+	fmt.Println("And the slice is - ", slice_s)
+	sort.Strings(slice_s)
+	fmt.Println("And the sorted slice is - ", slice_s)
+	// slice_s1 = sort.Strings(sort.StringSlice(slice_s))
+	// slice_s1 = sort.Sort(st.Fields(v_str))
 	//sorted_slice := sort.Sort(slice_s)
 
 	//WordCount(slice_s)
-	// fmt.Printf("slice_s - %v \n", slice_s)
+	fmt.Printf("slice_s - %v \n", slice_s)
 	fmt.Printf("sorted_map - %v", WordCount(slice_s))
 	// wc.Test(WordCount)
 

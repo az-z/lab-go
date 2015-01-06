@@ -27,6 +27,7 @@ func WordCount(s []string) map[string]int {
 			// fmt.Printf("sorted_map[%v] - %v \n", i, sorted_map[s[i]])
 		} else {
 			//
+
 			sorted_map[s[i]] = append(sorted_map)
 			sorted_map[s[i]] = 1
 
